@@ -1,0 +1,30 @@
+// Formal Definition
+formalDefinition.start
+	States=Q0,Q1,Q2,Q3;
+	Alphabet=A,B,@;
+	BlankSymbol=@;
+	TapeAlphabet=A,B;
+	InitialState=Q0;
+	FinalStates=Q3;
+formalDefinition.end
+
+// Transitions
+transitions.start
+	(Q0,B)->(Q0,B,R);
+	(Q0,A)->(Q1,A,R);
+	(Q1,B)->(Q0,B,R);
+	(Q1,A)->(Q2,A,R);
+	(Q2,B)->(Q2,B,R);
+	(Q2,A)->(Q1,A,R);
+	(Q2,@)->(Q3,@,R);
+transitions.end
+
+// Tape Input
+input.start
+	Input=ABBAABB;
+input.end
+
+// Breakpoints
+breakpoints.start
+	
+breakpoints.end
